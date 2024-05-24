@@ -1,0 +1,46 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="albumMain">
+    <div class="container">
+        <div class="row">
+            <nav class="nav justify-content-evenly" id="albumNav">
+                <a href="/album/sort">sort albums</a>
+                <a href="/album/form">add an album</a>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <% data.forEach(item => { %>
+                        <div class="col-sm-3">
+                            <figure class="figure album-figure">
+                                <img src="/images/<%= item.album_cover %>" alt="<%= item.title %> album cover" class="img-fluid album-cover rounded figure-image"/>
+                                <figcaption class="figure-caption">
+                                    <a href="/album/<%= item.album_id %>">
+                                        <%= item.title %>
+                                    </a>
+                                </figcaption>
+                                <figcaption class="figure-caption">
+                                    <% if (item.band == '') { %> 
+                                        <% if (item.alias == '') { %> 
+                                            <%= item.fName %> <%= item.lName %>
+                                        <% } else { %>
+                                            <%= item.alias %>
+                                        <% } %>
+                                    <% } else { %>
+                                            <%= item.band %>
+                                    <% } %>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <%- include('../partials/aside') %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

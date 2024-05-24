@@ -1,0 +1,62 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="albumForMain">
+    <div class="container">
+        <form action="">
+            <h2>Add an album</h2>
+            <div class="mb-3">
+                <label for="title" class="form-label">title</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                name="title" 
+                value=""
+                required>
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-control">author</label>
+                <input 
+                type="search" 
+                class="form-control" 
+                name="" 
+                value="" 
+                id="author"
+                required>
+            </div>
+            <div class="mb-3">
+                <label for="yr_released" class="form-label">year released</label>
+                <input type="number"
+                class="form-control"
+                name="yr_released"
+                value=""
+                id="yr_released"
+                min="1900"
+                max="2400"
+                required>
+            </div>
+            <div class="mb-3">
+                <label for="album_cover" class="form-label">album cover</label>
+                <input type="file"
+                class="form-control"
+                name="album_cover"
+                value=""
+                id="album_cover">
+            </div>
+            <div class="mb-3">
+                <label for="label" class="form-label">label</label>
+                <input type="search"
+                class="form-control"
+                name="label"
+                value=""
+                id="label"
+                required>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+</main>
+
+
+<%- include('../partials/footer'); %>

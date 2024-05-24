@@ -1,0 +1,46 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="artistSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/<%= data[0].imgUrl %>" alt="img of <%= name %> " class="img-fluid image"/>
+            </div>
+            <div class="col-md-6">
+                <h2 class="sub-heading">
+                    <%= name %>
+                </h2>
+                <p class="artist-text">
+                    Real name: <%= data[0].fName %> <%= data[0].lName %>
+                </p>
+            </div>
+                <div class="row">
+                    <h3 class="h3-heading text-capitalize">albums from <%= name %></h3>
+                    <% data.forEach(item => { %> 
+                        <div class="col-sm-4">
+                            <figure class="figure singlefigure">
+                                <img src="/images/<%= item.album_cover %>" alt="image of <%= item.album_cover %>" class="figure-img rounded img-fluid">
+                                <figcaption class="figure-caption">
+                                    <a href="/album/<%= item.album_id %>">
+                                        <%= item.title %>
+                                    </a>
+                                        <%= item.yr_released %>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="sub-heading">
+                    <%= name %>
+                </h2>
+                <p class="artist-text">
+                    Real name: <%= data.fName %> <%= data.lName %>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

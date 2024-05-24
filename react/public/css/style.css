@@ -1,0 +1,15 @@
+*{box-sizing: border-box;}
+
+.list-group-item {
+    padding: 4px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.list-group-item:first-child{
+    border-top: none;
+}
+
+.list-group-item:last-child{
+    border-bottom: none;
+}
